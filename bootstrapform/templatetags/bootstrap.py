@@ -20,6 +20,12 @@ def bootstrap_inline(element):
 
 
 @register.filter
+def bootstrap_horizontal_field(element, label_cols='col-sm-2 col-lg-2', input_classes='col-sm-10 col-lg-10'):
+    markup_classes = {'label': label_cols, 'value': input_classes, 'single_value': ''}
+    return render(element, markup_classes)
+
+
+@register.filter
 def bootstrap_horizontal(element, label_cols='col-sm-2 col-lg-2'):
 
     markup_classes = {'label': label_cols, 'value': '', 'single_value': ''}
